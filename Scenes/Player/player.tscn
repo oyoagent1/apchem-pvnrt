@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://d00821oc6ym6p"]
+
+[ext_resource type="Texture2D" uid="uid://bxouar0mw5fku" path="res://Art/pngs/player.png" id="1_2jwwj"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_sqa5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4gci"]
+size = Vector2(30, 30)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_sqa5w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("1_2jwwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c4gci")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -32.0
+offset_top = -88.0
+offset_right = 176.0
+offset_bottom = -64.0
+text = "P = 0.00"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = -32.0
+offset_top = -72.0
+offset_right = 48.0
+offset_bottom = -48.0
+text = "V = 0.00"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -32.0
+text = "n = 0.00"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 208.0
+offset_bottom = -16.0
+text = "T = 0.00"

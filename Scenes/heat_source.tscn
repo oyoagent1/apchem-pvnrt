@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://5o8nvqyc7xdt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuogn"]
+size = Vector2(32, 32)
+
+[node name="HeatSource" type="RigidBody2D" groups=["heat_sources"]]
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fuogn")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(1, 0.494976, 0.388577, 1)

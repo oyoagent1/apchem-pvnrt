@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cylgbiba6jqat"]
+[gd_scene load_steps=5 format=3 uid="uid://cylgbiba6jqat"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_4tsmf"]
+[ext_resource type="Texture2D" uid="uid://bu6jrm2gra8ng" path="res://Art/pngs/TIlemap_v1.png" id="2_jp3cs"]
+[ext_resource type="PackedScene" uid="uid://d00821oc6ym6p" path="res://Scenes/Player/player.tscn" id="3_48kvf"]
+[ext_resource type="PackedScene" uid="uid://5o8nvqyc7xdt" path="res://Scenes/heat_source.tscn" id="4_xxi6y"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4tsmf")
+
+[node name="TIlemapV1" type="Sprite2D" parent="."]
+texture = ExtResource("2_jp3cs")
+
+[node name="Player" parent="." instance=ExtResource("3_48kvf")]
+
+[node name="HeatSource" parent="." instance=ExtResource("4_xxi6y")]
+position = Vector2(-64, -32)
+freeze = true

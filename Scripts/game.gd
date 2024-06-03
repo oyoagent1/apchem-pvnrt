@@ -5,6 +5,8 @@ var active_menu
 var active_map
 var active_player
 
+# TODO: this is so bad actually die please be better at coding 
+var can_open_pause_menu: bool
 var pause_menu_open: bool
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _input(event):
+	# toggle pause menu TODO make this less horrible bc it also closes the main menu which is bad and cringe
 	if event.is_action_pressed("pause_game"):
 		print(pause_menu_open)
 		if pause_menu_open:
@@ -22,7 +25,7 @@ func _input(event):
 			pause_menu_open = !pause_menu_open
 			return
 		else:
-			load_menu("res://Scenes/pause_menu.tscn")
+			load_menu("res://Scenes/main_menu.tscn")
 			pause_menu_open = !pause_menu_open
 
 # Methods to load shit, call with "clear" to make the active menu hit the griddy(go away)
@@ -40,6 +43,7 @@ func load_menu(path: String):
 		print(menu)
 		pause_menu_open = false
 
+# load player
 func load_player(path: String):
 	if path == "clear":
 		active_menu.queue_free()
@@ -53,6 +57,7 @@ func load_player(path: String):
 		active_player = player
 		print(player)
 
+# load the map
 func load_map(path: String):
 	if path == "clear":
 		active_menu.queue_free()

@@ -6,7 +6,6 @@ func _ready():
 	#connect signal to assumed parent game node
 	connect("main_menu_button_signal", get_parent().load_menu)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
